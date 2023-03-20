@@ -1,0 +1,29 @@
+﻿@model HealthInsuranceManagement.Models.UserLogin;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <form asp-controller="Login" asp-action="Login" method="post">
+        <hi>Login</hi>
+        <input type="text" placeholder="Username" asp-for="Username" />
+        <input type="password" placeholder="**********" asp-for="Password" />
+
+        <button type="submit">Login</button>
+
+        @if (ViewData["ValidateMessage"] != null)
+        {
+            <br />
+            <br />
+            <label>@ViewData["ValidateMessage"]</label>
+        }
+    </form>
+</body>
+</html>
